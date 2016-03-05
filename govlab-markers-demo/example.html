@@ -6,6 +6,7 @@
 <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 <script src='https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.js'></script>
 <link href='https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.css' rel='stylesheet' />
+<script src='https://api.tiles.mapbox.com/mapbox.js/plugins/turf/v2.0.2/turf.min.js'></script>
 <style>
   body { margin:0; padding:0; }
   #map { position:absolute; top:0; bottom:0; width:100%; }
@@ -71,8 +72,46 @@ var geoJson = [{
             "className": "dot",
          }
     }
-
+},{
+  	"type": "Feature",
+  	"properties": {
+  		"stroke-width":"2"
+  	},
+  	"geometry": {
+    "type": "LineString",
+    "coordinates": [
+          [
+            -73.98718,
+            40.69373815481626
+          ],
+          [
+            -73.98668378591537,
+            40.69372188548713
+          ],
+          [
+            -73.9861312508583,
+            40.69370358248712
+          ],
+          [
+            -73.98614197969437,
+            40.69347377772554
+          ],
+          [
+            -73.98611783981323,
+            40.69347174405156
+          ],
+          [
+            -73.98609906435013,
+            40.6934717440515
+          ]
+        ]
+  	}
 }];
+
+
+
+
+
 
 // Set a custom icon on each marker based on feature properties.
 myLayer.on('layeradd', function(e) {
@@ -92,8 +131,14 @@ myLayer.on('layeradd', function(e) {
     
 });
 
+
+
+
 // Add features to the map.
 myLayer.setGeoJSON(geoJson);
+
+
+
 </script>
 </body>
 </html>
